@@ -62,10 +62,19 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
+  const up = word.toUpperCase() +"!";
+
+  return up;
 };
 
 const speaker = (words, cb) => {
+  let str = [];
   // Solution code here...
+  words.forEach((el) => {
+    str.push(cb(el))
+   
+  })
+  return str
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,10 +95,14 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  return arr.push(value);
 };
 
 const addNumbers = (num, arr, times, cb) => {
   // Solution code here...
+  const newNum = [];
+
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,6 +125,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const groceryList = [];
+  availableItems.forEach((li) => {
+    if (li.available == true) {
+      return groceryList.push(li.name);
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,6 +150,19 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  const out = [];
+  arr.forEach((num) => {
+    if (num % 3 === 0) {
+      return out.push("Fizz");
+    } else if (num % 5 === 0) {
+      return out.push("Buzz");
+    } else if (num % 3 === 0 && num % 5 === 0) {
+      return out.push("Fizz Buzz");
+    } else {
+      return out.push(num);
+    }
+  });
+  return out;
 };
 
 /* ------------------------------------------------------------------------------------------------
