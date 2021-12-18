@@ -8,6 +8,14 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
   // Solution code here...
+
+  let longestWord = "";
+  arr.forEach((word) => {
+    if(word.length > longestWord.length) {
+      longestWord = word;
+    }
+  });
+  return arr.indexOf(longestWord);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,6 +28,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
+  const result = arr.map(([l])=> l);
+  return result
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,6 +42,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  return arr.match(/([:)])\w*/gi)
 };
 
 /* ------------------------------------------------------------------------------------------------
