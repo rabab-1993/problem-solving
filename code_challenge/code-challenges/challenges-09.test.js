@@ -203,6 +203,13 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((previousValue, currentValue) => {
+    if (currentValue.children) {
+      // allNames[name]++
+      previousValue += currentValue.children.length
+    }
+    return previousValue
+  }, 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,6 +243,12 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, curr) => {
+    if (isPrime(curr)) {
+      acc += 1;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -279,6 +292,12 @@ const snorlaxData = {
 
 const extractStat = (statName, arr) => {
   // Solution code here...
+  return arr.reduce((acc, curr) => {
+    if (curr.stat.name == statName) {
+      acc = curr;
+    }
+    return acc;
+  }, null);
 };
 
 /* ------------------------------------------------------------------------------------------------
